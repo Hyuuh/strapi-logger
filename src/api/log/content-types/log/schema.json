@@ -1,0 +1,83 @@
+{
+  "kind": "collectionType",
+  "collectionName": "logs",
+  "info": {
+    "singularName": "log",
+    "pluralName": "logs",
+    "displayName": "Log"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "message": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "default": "info",
+      "enum": [
+        "info",
+        "debug",
+        "error",
+        "warn",
+        "critical"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "required": true
+    },
+    "payload": {
+      "type": "json"
+    },
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "userRole": {
+      "type": "string",
+      "required": true
+    },
+    "ip": {
+      "type": "string",
+      "required": true
+    },
+    "method": {
+      "type": "string",
+      "required": true
+    },
+    "endpoint": {
+      "type": "string",
+      "required": true
+    },
+    "statusCode": {
+      "type": "string",
+      "required": true
+    },
+    "app": {
+      "type": "string",
+      "required": true
+    },
+    "audit_trail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::audit-trail.audit-trail",
+      "mappedBy": "log"
+    },
+    "sourceLine": {
+      "type": "string",
+      "required": true
+    },
+    "trace": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

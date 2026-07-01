@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "audit_trails",
+  "info": {
+    "singularName": "audit-trail",
+    "pluralName": "audit-trails",
+    "displayName": "Audit Trail"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "entity": {
+      "type": "string"
+    },
+    "entityId": {
+      "type": "string"
+    },
+    "oldValue": {
+      "type": "json"
+    },
+    "newValue": {
+      "type": "json"
+    },
+    "action": {
+      "type": "enumeration",
+      "enum": [
+        "create",
+        "update",
+        "delete"
+      ]
+    },
+    "user": {
+      "type": "string"
+    },
+    "log": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::log.log",
+      "inversedBy": "audit_trail"
+    }
+  }
+}
