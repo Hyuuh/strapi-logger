@@ -39,6 +39,10 @@
       "relation": "oneToOne",
       "target": "api::log.log",
       "inversedBy": "audit_trail"
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

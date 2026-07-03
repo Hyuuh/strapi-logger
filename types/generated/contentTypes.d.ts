@@ -457,6 +457,7 @@ export interface ApiAuditTrailAuditTrail extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     entity: Schema.Attribute.String;
     entityId: Schema.Attribute.String;
+    isDeleted: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -495,6 +496,7 @@ export interface ApiLogLog extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     endpoint: Schema.Attribute.String & Schema.Attribute.Required;
     ip: Schema.Attribute.String & Schema.Attribute.Required;
+    isDeleted: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::log.log'> &
       Schema.Attribute.Private;

@@ -78,6 +78,10 @@
     "trace": {
       "type": "string",
       "required": true
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
