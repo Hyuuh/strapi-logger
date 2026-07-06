@@ -249,6 +249,7 @@ export interface AdminSession extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'admin::session'> &
       Schema.Attribute.Private;
+    metadata: Schema.Attribute.JSON & Schema.Attribute.Private;
     origin: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Private;
@@ -471,7 +472,6 @@ export interface ApiAuditTrailAuditTrail extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    user: Schema.Attribute.String;
   };
 }
 
@@ -495,19 +495,18 @@ export interface ApiLogLog extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     endpoint: Schema.Attribute.String & Schema.Attribute.Required;
+    Entity: Schema.Attribute.String;
     ip: Schema.Attribute.String & Schema.Attribute.Required;
     isDeleted: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::log.log'> &
       Schema.Attribute.Private;
-    message: Schema.Attribute.String & Schema.Attribute.Required;
     method: Schema.Attribute.String & Schema.Attribute.Required;
     payload: Schema.Attribute.JSON;
     publishedAt: Schema.Attribute.DateTime;
     source: Schema.Attribute.String & Schema.Attribute.Required;
     sourceLine: Schema.Attribute.String & Schema.Attribute.Required;
     statusCode: Schema.Attribute.String & Schema.Attribute.Required;
-    trace: Schema.Attribute.String & Schema.Attribute.Required;
     type: Schema.Attribute.Enumeration<
       ['info', 'debug', 'error', 'warn', 'critical']
     > &

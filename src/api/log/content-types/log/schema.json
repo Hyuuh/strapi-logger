@@ -11,10 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "message": {
-      "type": "string",
-      "required": true
-    },
     "type": {
       "type": "enumeration",
       "default": "info",
@@ -75,13 +71,12 @@
       "type": "string",
       "required": true
     },
-    "trace": {
-      "type": "string",
-      "required": true
-    },
     "isDeleted": {
       "type": "boolean",
       "default": false
+    },
+    "Entity": {
+      "type": "string"
     }
   }
 }
