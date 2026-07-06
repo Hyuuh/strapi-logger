@@ -495,7 +495,6 @@ export interface ApiLogLog extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     endpoint: Schema.Attribute.String & Schema.Attribute.Required;
-    Entity: Schema.Attribute.String;
     ip: Schema.Attribute.String & Schema.Attribute.Required;
     isDeleted: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

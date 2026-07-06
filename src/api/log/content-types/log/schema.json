@@ -74,9 +74,6 @@
     "isDeleted": {
       "type": "boolean",
       "default": false
-    },
-    "Entity": {
-      "type": "string"
     }
   }
 }
